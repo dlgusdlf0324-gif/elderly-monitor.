@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: elderly-monitor
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --workers=2 --threads=4 --timeout=120
+    autoDeploy: true
+    region: singapore
+    envVars: []
